@@ -12,6 +12,7 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     // credentials: true, // Aktifkan jika perlu kirim/terima cookies
   });
+  await app.listen(3000);
 
   const config = new DocumentBuilder()
     .setTitle('Extra Pockets API')
