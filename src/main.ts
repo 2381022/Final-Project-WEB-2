@@ -4,15 +4,9 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
-  app.enableCors({
-    origin: 'http://localhost:5173', // <-- URL Frontend kamu!
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    // credentials: true, // Aktifkan jika perlu kirim/terima cookies
-  });
-  await app.listen(3000);
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle('Extra Pockets API')
