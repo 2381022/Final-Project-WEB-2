@@ -25,8 +25,6 @@ interface RequestWithUser extends Request {
 }
 
 @ApiTags('Jadwal Latihan (Training Schedules)')
-@ApiBearerAuth()
-@UseGuards(AuthGuard)
 @Controller('jadwal-latihan')
 export class JadwalLatihanController {
     constructor(private readonly jadwalLatihanService: JadwalLatihanService) { }
@@ -56,6 +54,7 @@ export class JadwalLatihanController {
     @ApiResponse({ status: 200, description: 'List of schedules.', type: [JadwalLatihanResponseDto] })
     @ApiResponse({ status: 401, description: 'Unauthorized' })
     async findAll(): Promise<JadwalLatihan[]> {
+        console.log('findAll');
         return this.jadwalLatihanService.findAll();
         // Map to Response DTO if needed
     }

@@ -24,7 +24,7 @@ import {
     tempat: string;
 
     @ManyToOne(() => Admin, { eager: true }) // Define relation with Admin
-    @JoinColumn({ name: 'admin_id' }) // Foreign key column
+    @JoinColumn({ name: 'id_admin' }) // Changed from admin_id to id_admin
     admin: Admin;
 
     
